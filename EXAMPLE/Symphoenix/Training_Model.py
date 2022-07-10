@@ -20,8 +20,8 @@ config_path  = 'CONFIG\config_train.yml'
 config_train = FileIO.read_yaml(config_path)
 
 # Read prices
-x = pd.read_csv('STATICS/FX/2019/EURJPY.csv')
-y = pd.read_csv('STATICS/FX/2019/GBPJPY.csv')
+x = pd.read_csv('/kaggle/working/Heptet/STATICS/FX/USDCAD.csv')
+y = pd.read_csv('/kaggle/working/Heptet/STATICS/FX/USDCAD.csv')
 divider = round(len(x) * 0.7)
 x_divider = list(range(divider, len(x)))
 y_divider = list(range(divider, len(y)))
