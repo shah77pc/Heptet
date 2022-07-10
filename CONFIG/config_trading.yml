@@ -1,6 +1,6 @@
-Instrument_A: EUR_JPY
-Instrument_B: GBP_JPY
-DataOandaAccount: required
-DataOandaToken: required
+Instrument_A: USD_CAD
+Instrument_B: USD_CAD
+DataOandaAccount: 101-004-22768713-002
+DataOandaToken: 70bd97179452d5de017c73fd5b6903c4-62754867c1b007902356da010827d743
 DataTgrChatID: optional
 DataTgrToken: optional
