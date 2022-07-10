@@ -10,12 +10,12 @@ from STRATEGY.Cointegration import EGCointegration
 
 
 # Read config
-config_path  = 'CONFIG\config_train.yml'
+config_path  = 'config_train.yml'
 config_train = FileIO.read_yaml(config_path)
 
 # Read prices
-x = pd.read_csv('STATICS\PRICE\JNJ.csv')
-y = pd.read_csv('STATICS\PRICE\PG.csv')
+x = pd.read_csv('STATICS/PRICE/JNJ.csv')
+y = pd.read_csv('STATICS/PRICE/PG.csv')
 x, y = EGCointegration.clean_data(x, y, 'date', 'close')
 
 # Separate training and testing sets
