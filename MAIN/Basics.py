@@ -43,14 +43,14 @@ class Agent(metaclass=abc.ABCMeta):
     def save_model(self, folder=None, name=None, session=None):
         folder_path = self.config['AgentModelSaverSavePath'] if folder is None else folder
         name        = self.config['AgentModelSaverSaveName'] if name is None else name
-        file_path   = path.join(folder_path, name).replace('\\', '/')
+        file_path   = path.join(folder_path, name).replace('/', '/')
         session     = self.session if session is None else session
         self.saver.save(session, file_path)
 
     def restore_model(self, folder=None, name=None, session=None):
         folder_path = self.config['AgentModelSaverRestorePath'] if folder is None else folder
         name        = self.config['AgentModelSaverRestoreName'] if name is None else name
-        file_path   = path.join(folder_path, name).replace('\\', '/')
+        file_path   = path.join(folder_path, name).replace('/', '/')
         session     = self.session if session is None else session
         # self.saver.restore(session, file_path + '.meta')
         saving = tf.train.import_meta_graph(file_path + '.meta')
