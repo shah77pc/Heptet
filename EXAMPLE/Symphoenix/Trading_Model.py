@@ -35,9 +35,9 @@ Multi_Threading = True
 Tgr_Verbose = True
 
 # Read config
-config_path    = 'CONFIG\config_train.yml'
+config_path    = 'config_train.yml'
 config_train   = FileIO.read_yaml(config_path)
-config_path    = 'CONFIG\config_trading.yml'
+config_path    = 'config_trading.yml'
 config_trading = FileIO.read_yaml(config_path)
 instrument_1   = config_trading['Instrument_A']
 instrument_2   = config_trading['Instrument_B']
@@ -222,7 +222,7 @@ try:
                 action_dict = RL_Train.action_space.convert(opt_action, 'index_to_dict')
                 folder_path = config_train['AgentModelSaverRestorePath']
                 name = 'action_dict.csv'
-                file_path = path.join(folder_path, name).replace('\\', '/')
+                file_path = path.join(folder_path, name).replace('/', '/')
                 with open(file_path, 'w', newline='') as f:
                     w = csv.DictWriter(f, action_dict.keys())
                     w.writeheader()
@@ -232,7 +232,7 @@ try:
             if restore_model is True and restored is False:
                 folder_path = config_train['AgentModelSaverRestorePath']
                 name = 'action_dict.csv'
-                file_path = path.join(folder_path, name).replace('\\', '/')
+                file_path = path.join(folder_path, name).replace('/', '/')
                 with open(file_path, 'r') as f:
                     action_dict_temp = []
                     for k, row in enumerate(csv.DictReader(f)):
