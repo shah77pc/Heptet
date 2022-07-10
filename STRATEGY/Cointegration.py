@@ -31,7 +31,7 @@ Multi_Threading = True
 Tgr_Verbose = True
 
 # Load Settings
-config_path    = 'CONFIG\config_trading.yml'
+config_path    = 'CONFIG/config_trading.yml'
 config_trading = FileIO.read_yaml(config_path)
 instrument_1   = config_trading['Instrument_A']
 instrument_2   = config_trading['Instrument_B']
